@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  league_id: 
+  name: "Team A"
+  league_id: 4
 
 two:
-  name: MyString
-  league_id: 
+  name: "Team B"
+  league_id: 5
