@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :referees, defaults: {format: :json}
     resources :matches, defaults: {format: :json}
     resources :cards, defaults: {format: :json}
+    resources :goals, defaults: {format: :json}
+
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
