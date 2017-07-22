@@ -14,7 +14,9 @@ postgres=# ALTER ROLE api_tournamentManager CREATEDB;
 ALTER ROLE
 postgres=# \du
 
-change pg gem in rails for it to work
+$ rails new project-name --api --database=postgresql
+
+change pg gem in the gemfile for it to work
 gem 'pg', '0.20'
 then bundle install
 and rake db:setup
