@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722202149) do
+ActiveRecord::Schema.define(version: 20170722210851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 20170722202149) do
 
   add_index "cards", ["match_id"], name: "index_cards_on_match_id", using: :btree
   add_index "cards", ["player_id"], name: "index_cards_on_player_id", using: :btree
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "player_id"
+    t.integer  "match_id"
+    t.integer  "minute"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "category"
+  end
+
+  add_index "goals", ["match_id"], name: "index_goals_on_match_id", using: :btree
+  add_index "goals", ["player_id"], name: "index_goals_on_player_id", using: :btree
 
   create_table "leagues", force: :cascade do |t|
     t.string   "name"
@@ -96,6 +108,8 @@ ActiveRecord::Schema.define(version: 20170722202149) do
 
   add_foreign_key "cards", "matches"
   add_foreign_key "cards", "players"
+  add_foreign_key "goals", "matches"
+  add_foreign_key "goals", "players"
   add_foreign_key "locations", "leagues"
   add_foreign_key "matches", "leagues"
   add_foreign_key "matches", "locations"
