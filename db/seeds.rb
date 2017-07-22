@@ -5,9 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# `rake db:reset db:migrate`
 
 Player.delete_all
 Team.delete_all
+Match.delete_all
 Location.delete_all
 Referee.delete_all
 League.delete_all
@@ -28,3 +30,5 @@ location2 = Location.create( { name:"Holyroot", league:leagueA, lat:55.943579, l
 
 referee1 = Referee.create( { name:"John", last_name:"Smith", league:leagueA } );
 referee2 = Referee.create( { name:"Carlos", last_name:"Carlton", league:leagueA } );
+
+match1 = Match.create(  { home:team1, away:team2, date:"2017-07-23", time:"10:30:00", league: leagueA, location: location1, referee: referee1 } );

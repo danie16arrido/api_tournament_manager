@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :teams, defaults: {format: :json}
     resources :players, defaults: {format: :json}
     resources :locations, defaults: {format: :json}
+    resources :referees, defaults: {format: :json}
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

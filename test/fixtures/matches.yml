@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home_id: 
+  away_id: 
+  date: 2017-07-22
+  time: 2017-07-22 19:47:19
+  league_id: 
+  location_id: 
+  referee_id: 
+
+two:
+  home_id: 
+  away_id: 
+  date: 2017-07-22
+  time: 2017-07-22 19:47:19
+  league_id: 
+  location_id: 
+  referee_id: 
