@@ -5,8 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Team.delete_all
 League.delete_all
 
 leagueA = League.create( { name: "FA Cup"});
 leagueB = League.create( { name: "Spanish Cup"});
+
+team1 = Team.create( { name:"Chelsea", league: leagueA} );
+team2 = Team.create( { name:"Liverpool", league: leagueA} );
