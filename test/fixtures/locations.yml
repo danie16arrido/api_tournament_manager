@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  league_id: 
+  name: "fieldB"
+  league_id: 2
   lat: 1.5
-  lng: 1.5
+  lng: 1.4
 
 two:
-  name: MyString
-  league_id: 
-  lat: 1.5
-  lng: 1.5
+  name: "fieldA"
+  league_id: 1
+  lat: 14.5
+  lng: 0.512349
