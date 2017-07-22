@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   scope path: "api/v1" do
     resources :leagues, defaults: {format: :json}
     resources :teams, defaults: {format: :json}
+    resources :players, defaults: {format: :json}
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
