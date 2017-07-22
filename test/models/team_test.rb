@@ -6,6 +6,6 @@ class TeamTest < ActiveSupport::TestCase
   end
 
   test "Teams have league id" do
-    assert_equal( 5, teams(:two).id)
+    assert_equal( 5, teams(:two).league_id)
   end
 end
