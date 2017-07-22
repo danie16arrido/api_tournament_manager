@@ -19,3 +19,6 @@ player1 = Player.create ( { name:"Daniel" , last_name:"Garrido" , team: team1, a
 player2 = Player.create ( { name:"Leo" , last_name:"Messi" , team: team1 , age: 33 ,height: 1.03 ,weight: 60.8  } );
 player3 = Player.create ( { name:"Cristiano" , last_name:"Ronaldo" , team: team2 , age: 34 ,height: 1.83 ,weight: 78.8  } );
 
+location1 = Location.create ( { name:"Edinburgh Uni B", league:leagueA } );
+location2 = Location.create ( { name:"Holyroot", league:leagueA, lat:55.943579, lng:-3.161584 } );
+
