@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+leagueA = League.create( { name: "FA Cup"});
+leagueB = League.create( { name: "Spanish Cup"});
