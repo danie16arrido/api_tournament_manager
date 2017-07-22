@@ -4,10 +4,10 @@ class LocationsController < ApplicationController
     render :json => all_locations
   end
 
-  # def show
-  #   location= Location.find( params[:id])
-  #   render :json => location
-  # end
+  def show
+    location= Location.find( params[:id])
+    render :json => location
+  end
 
   # def create
   #   leagueFinder = League.find( location_params[:league])
