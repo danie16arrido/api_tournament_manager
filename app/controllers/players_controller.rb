@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
 
   def create
     players_team = Team.find( player_params[:team])
-    player =  getPlayerObject( players_team )
+    player =  Player.create( getPlayerObject( players_team ) )
     render json: player, status: :created
   end
 
