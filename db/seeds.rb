@@ -9,6 +9,7 @@
 
 Player.delete_all
 Team.delete_all
+Card.delete_all
 Match.delete_all
 Location.delete_all
 Referee.delete_all
@@ -32,3 +33,6 @@ referee1 = Referee.create( { name:"John", last_name:"Smith", league:leagueA } );
 referee2 = Referee.create( { name:"Carlos", last_name:"Carlton", league:leagueA } );
 
 match1 = Match.create(  { home:team1, away:team2, date:"2017-07-23", time:"10:30:00", league: leagueA, location: location1, referee: referee1 } );
+
+card1 = Card.create( { player:player1, match:match1, minute:44, colour:"yellow" } )
+card1 = Card.create( { player:player2, match:match1, minute:90, colour:"red" } )
