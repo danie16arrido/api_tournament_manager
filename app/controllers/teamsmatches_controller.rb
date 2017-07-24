@@ -1,11 +1,15 @@
-class TeamsController < ApplicationController
+class TeamsmatchesController < ApplicationController
   def index
-    all_teams = Team.all #.where(home_id: params[:home_id])
-    render :json => all_teams
+    match = Match.find(params[:match_id])
+    teams_in_match = []
+    teams_in_match.push(Team.find( match.home_id))
+    teams_in_match.push(Team.find( match.away_id))
+
+    render :json => teams_in_match
   end
 
   def show
-    team= Team.find( params[:id])
+    team = Team.find( params[:id])
     render :json => team
   end
 

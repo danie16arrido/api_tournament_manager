@@ -19,9 +19,7 @@ Rails.application.routes.draw do
       end 
 
       resources :matches, defaults: {format: :json} do
-        resources :teams, {format: :json} do
-          resources :players, defaults: {format: :json}  
-        end
+        resources :teamsmatches, {format: :json} 
       end
     end
 
