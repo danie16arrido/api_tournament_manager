@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     resources :matches, defaults: {format: :json}
     resources :cards, defaults: {format: :json}
     resources :goals, defaults: {format: :json}
-    resources :leagues do 
-      resources :matches do
-        resources :teams do
-          resources :players  
+    resources :leagues,defaults: {format: :json} do 
+      resources :matches, defaults: {format: :json} do
+        resources :teams,defaults: {format: :json} do
+          resources :players,defaults: {format: :json}  
         end
       end
     end
