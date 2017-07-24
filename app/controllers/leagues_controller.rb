@@ -7,15 +7,27 @@ class LeaguesController < ApplicationController
   def show
     league = League.find( params[:id])
     render :json =>  
-    # league
     league.as_json({
       except:[:created_at, :updated_at],
       include:{
         matches: {
-          only: [:home_id, :away_id, :location_id, :referee_id, :date, :time]
+          only: [:date, :time],
+          include: {
+            home: {
+              only: ["name"]
+            },
+            away: {
+              only: ["name"]
+            },
+            location: {
+              only: ["name"]
+            },
+            referee: {
+              only: ["name", "last_name"]
+            }
           }
-        }
-      
+          }
+        } 
     })
   end
 

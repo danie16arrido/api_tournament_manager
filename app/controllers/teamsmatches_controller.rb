@@ -4,8 +4,18 @@ class TeamsmatchesController < ApplicationController
     teams_in_match = []
     teams_in_match.push(Team.find( match.home_id))
     teams_in_match.push(Team.find( match.away_id))
-
-    render :json => teams_in_match
+    
+    # render :json => teams_in_match
+    render :json => match.as_json({
+      include: {
+            home: {
+              only: ["name"]
+            },
+            away: {
+              only: ["name"]
+            }
+          }
+        })
   end
 
   def show
