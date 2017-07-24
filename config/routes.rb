@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   scope path: "api/v1" do
-    resources :leagues, defaults: {format: :json}
+    
     resources :teams, defaults: {format: :json}
     resources :players, defaults: {format: :json}
     resources :locations, defaults: {format: :json}
@@ -10,6 +10,13 @@ Rails.application.routes.draw do
     resources :matches, defaults: {format: :json}
     resources :cards, defaults: {format: :json}
     resources :goals, defaults: {format: :json}
+    resources :leagues do 
+      resources :matches do
+        resources :teams do
+          resources :players  
+        end
+      end
+    end
 
   end
   # You can have the root of your site routed with "root"

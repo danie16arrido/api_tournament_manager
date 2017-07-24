@@ -20,3 +20,10 @@ change pg gem in the gemfile for it to work
 gem 'pg', '0.20'
 then bundle install
 and rake db:setup
+
+
+------CORS
+config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => 'http://my-web-service-consumer-site.com',
+    'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+  }
