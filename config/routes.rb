@@ -3,17 +3,24 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   scope path: "api/v1" do
     
-    resources :teams, defaults: {format: :json}
-    resources :players, defaults: {format: :json}
-    resources :locations, defaults: {format: :json}
-    resources :referees, defaults: {format: :json}
-    resources :matches, defaults: {format: :json}
-    resources :cards, defaults: {format: :json}
-    resources :goals, defaults: {format: :json}
-    resources :leagues,defaults: {format: :json} do 
+    # resources :teams, defaults: {format: :json} do 
+    #   resources :players,  defaults: {format: :json}
+    # end
+
+    # resources :players, defaults: {format: :json}
+    # resources :locations, defaults: {format: :json}
+    # resources :referees, defaults: {format: :json}
+    # resources :matches, defaults: {format: :json}
+    # resources :cards, defaults: {format: :json}
+    # resources :goals, defaults: {format: :json}
+    resources :leagues do
+      resources :teams, defaults: {format: :json} do
+        resources :playersteams, defaults: {format: :json} 
+      end 
+
       resources :matches, defaults: {format: :json} do
-        resources :teams,defaults: {format: :json} do
-          resources :players,defaults: {format: :json}  
+        resources :teams, {format: :json} do
+          resources :players, defaults: {format: :json}  
         end
       end
     end
