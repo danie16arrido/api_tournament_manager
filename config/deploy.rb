@@ -7,7 +7,7 @@ set :branch, 'feature/devopstest'
 set :deploy_to, '/home/deploy/api_tournament_manager'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system cpublic/uploads}
 set :keep_releases, 5
 set :rvm_type, :user
 set :rvm_ruby_version, 'ruby-2.4.0'#'jruby-1.7.19' # Edit this if you are using MRI Ruby
@@ -58,6 +58,17 @@ set :linked_dirs, %w(tmp/pids tmp/sockets log)
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+namespace :puma do
+  desc 'Create Directories for Puma Pids and Socket'
+  task :make_dirs do
+    on roles(:app) do
+      execute "mkdir #{shared_path}/tmp/sockets -p"
+      execute "mkdir #{shared_path}/tmp/pids -p"
+    end
+  end
+
+  before :start, :make_dirs
+end
 
 namespace :deploy do
 
